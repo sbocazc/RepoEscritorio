@@ -1,0 +1,42 @@
+﻿<Window x:Class="EscritorioFerme.AgregarProductosWpf"
+       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EscritorioFerme"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d" Height="504.927" Width="681.249" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" BorderBrush="Black" Background="White" OpacityMask="Black" ShowInTaskbar="False" WindowStyle="None" SnapsToDevicePixels="True" BorderThickness="3">
+    <Grid Background="White" MouseDown="Grid_MouseDown" Margin="0,0,0,0" HorizontalAlignment="Left" Width="675">
+        <StackPanel VerticalAlignment="Top">
+            <Grid Background="Crimson" Height="40">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="10 0">
+                    <TextBlock Text="Usuario" Margin="0 10 0 0" FontSize="15" Foreground="White"></TextBlock>
+                    <Button Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="White">
+                        <materialDesign:PackIcon Kind="Account" />
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </StackPanel>
+        <Grid HorizontalAlignment="Left" Height="369" Margin="10,59,0,0" VerticalAlignment="Top" Width="627">
+            <TextBox x:Name="textBox_Copy1" HorizontalAlignment="Left" Height="23" Margin="252,62,0,0" TextWrapping="Wrap" Text="Ingrese Nombre" VerticalAlignment="Top" Width="135"/>
+            <TextBox x:Name="textBox_Copy4" HorizontalAlignment="Left" Height="23" Margin="252,286,0,0" TextWrapping="Wrap" Text="Ingrese Precio" VerticalAlignment="Top" Width="135"/>
+            <Label x:Name="label" Content="Proveedor" HorizontalAlignment="Left" Margin="15,23,0,0" VerticalAlignment="Top" Width="108"/>
+            <Label x:Name="label_Copy" Content="Tipo de producto" HorizontalAlignment="Left" Margin="236,149,0,0" VerticalAlignment="Top" Width="108"/>
+            <Label x:Name="label_Copy1" Content="Precio" HorizontalAlignment="Left" Margin="236,253,0,0" VerticalAlignment="Top" Width="108"/>
+            <Label x:Name="label_Copy2" Content="Descripción" HorizontalAlignment="Left" Margin="15,253,0,0" VerticalAlignment="Top" Width="108"/>
+            <Label x:Name="label_Copy3" Content="Fecha Vencimiento" Margin="15,149,338,0" VerticalAlignment="Top"/>
+            <Label x:Name="label_Copy4" Content="Nombre Producto" Margin="236,23,227,0" VerticalAlignment="Top"/>
+            <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="252,173,0,0" VerticalAlignment="Top" Width="135"/>
+            <TextBox x:Name="textBox_Copy" HorizontalAlignment="Left" Height="23" Margin="458,62,0,0" TextWrapping="Wrap" Text="Ingrese Nombre" VerticalAlignment="Top" Width="135"/>
+            <TextBox x:Name="textBox_Copy2" HorizontalAlignment="Left" Height="23" Margin="458,178,0,0" TextWrapping="Wrap" Text="Ingrese Nombre" VerticalAlignment="Top" Width="135"/>
+            <Label x:Name="label_Copy5" Content="Stock Critico" Margin="429,149,34,0" VerticalAlignment="Top"/>
+            <Label x:Name="label_Copy6" Content="Stock" Margin="429,23,34,0" VerticalAlignment="Top"/>
+            <DatePicker HorizontalAlignment="Left" Margin="29,178,0,0" VerticalAlignment="Top" Width="135"/>
+            <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="29,286,0,0" TextWrapping="Wrap" Text="Descripción del producto" VerticalAlignment="Top" Height="56" Width="120"/>
+            <ComboBox x:Name="comboBox_Copy" HorizontalAlignment="Left" Margin="29,57,0,0" VerticalAlignment="Top" Width="135"/>
+        </Grid>
+        <Button x:Name="button" Content="Agregar" HorizontalAlignment="Left" Margin="525,433,0,0" VerticalAlignment="Top" Width="90" Background="#FF0055AA" BorderBrush="{x:Null}" Click="button_Click"/>
+        <Button x:Name="button_Copy" Content="Cancelar" HorizontalAlignment="Left" Margin="29,433,0,0" VerticalAlignment="Top" Width="93" Background="#FFB61C1C" BorderBrush="{x:Null}" Click="button_Copy_Click"/>
+        <Button x:Name="button_Copy1" Content="Modificar" HorizontalAlignment="Left" Margin="380,433,0,0" VerticalAlignment="Top" Width="120" Background="#FF4B4BFF" BorderBrush="{x:Null}" Click="button_Click"/>
+    </Grid>
+</Window>

@@ -1,0 +1,84 @@
+C:\Users\Sebastian\Desktop\Escritorio\EscritorioFerme\EscritorioFerme\bin\Debug\EscritorioFerme.exe.config
+C:\Users\Sebastian\Desktop\Escritorio\EscritorioFerme\EscritorioFerme\bin\Debug\EscritorioFerme.exe
+C:\Users\Sebastian\Desktop\Escritorio\EscritorioFerme\EscritorioFerme\bin\Debug\EscritorioFerme.pdb
+C:\Users\Sebastian\Desktop\Escritorio\EscritorioFerme\EscritorioFerme\bin\Debug\MaterialDesignColors.dll
+C:\Users\Sebastian\Desktop\Escritorio\EscritorioFerme\EscritorioFerme\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\Sebastian\Desktop\Escritorio\EscritorioFerme\EscritorioFerme\bin\Debug\MaterialDesignColors.pdb
+C:\Users\Sebastian\Desktop\Escritorio\EscritorioFerme\EscritorioFerme\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\Sebastian\Desktop\Escritorio\EscritorioFerme\EscritorioFerme\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\Sebastian\Desktop\Escritorio\EscritorioFerme\EscritorioFerme\obj\Debug\EscritorioFerme.csprojAssemblyReference.cache
+C:\Users\Sebastian\Desktop\Escritorio\EscritorioFerme\EscritorioFerme\obj\Debug\MainWindow.g.cs
+C:\Users\Sebastian\Desktop\Escritorio\EscritorioFerme\EscritorioFerme\obj\Debug\App.g.cs
+C:\Users\Sebastian\Desktop\Escritorio\EscritorioFerme\EscritorioFerme\obj\Debug\EscritorioFerme_MarkupCompile.cache
+C:\Users\Sebastian\Desktop\Escritorio\EscritorioFerme\EscritorioFerme\obj\Debug\EscritorioFerme_MarkupCompile.lref
+C:\Users\Sebastian\Desktop\Escritorio\EscritorioFerme\EscritorioFerme\obj\Debug\App.baml
+C:\Users\Sebastian\Desktop\Escritorio\EscritorioFerme\EscritorioFerme\obj\Debug\MainWindow.baml
+C:\Users\Sebastian\Desktop\Escritorio\EscritorioFerme\EscritorioFerme\obj\Debug\EscritorioFerme.g.resources
+C:\Users\Sebastian\Desktop\Escritorio\EscritorioFerme\EscritorioFerme\obj\Debug\EscritorioFerme.Properties.Resources.resources
+C:\Users\Sebastian\Desktop\Escritorio\EscritorioFerme\EscritorioFerme\obj\Debug\EscritorioFerme.csproj.GenerateResource.cache
+C:\Users\Sebastian\Desktop\Escritorio\EscritorioFerme\EscritorioFerme\obj\Debug\EscritorioFerme.csproj.CopyComplete
+C:\Users\Sebastian\Desktop\Escritorio\EscritorioFerme\EscritorioFerme\obj\Debug\EscritorioFerme.exe
+C:\Users\Sebastian\Desktop\Escritorio\EscritorioFerme\EscritorioFerme\obj\Debug\EscritorioFerme.pdb
+C:\Users\Sebastian\Desktop\Escritorio\EscritorioFerme\EscritorioFerme\obj\Debug\UserControlColaboradores.g.cs
+C:\Users\Sebastian\Desktop\Escritorio\EscritorioFerme\EscritorioFerme\obj\Debug\UserControlColaboradores.baml
+C:\Users\Sebastian\Desktop\Escritorio\EscritorioFerme\EscritorioFerme\obj\Debug\UserControlClientes.g.cs
+C:\Users\Sebastian\Desktop\Escritorio\EscritorioFerme\EscritorioFerme\obj\Debug\UserControlOrden.g.cs
+C:\Users\Sebastian\Desktop\Escritorio\EscritorioFerme\EscritorioFerme\obj\Debug\UserControlProducto.g.cs
+C:\Users\Sebastian\Desktop\Escritorio\EscritorioFerme\EscritorioFerme\obj\Debug\UserControlProveedores.g.cs
+C:\Users\Sebastian\Desktop\Escritorio\EscritorioFerme\EscritorioFerme\obj\Debug\UserControlClientes.baml
+C:\Users\Sebastian\Desktop\Escritorio\EscritorioFerme\EscritorioFerme\obj\Debug\UserControlOrden.baml
+C:\Users\Sebastian\Desktop\Escritorio\EscritorioFerme\EscritorioFerme\obj\Debug\UserControlProducto.baml
+C:\Users\Sebastian\Desktop\Escritorio\EscritorioFerme\EscritorioFerme\obj\Debug\UserControlProveedores.baml
+C:\Users\Sebastian\Desktop\Aplicación de Escritorio interactivo\EscritorioFerme\EscritorioFerme\bin\Debug\EscritorioFerme.exe.config
+C:\Users\Sebastian\Desktop\Aplicación de Escritorio interactivo\EscritorioFerme\EscritorioFerme\bin\Debug\EscritorioFerme.exe
+C:\Users\Sebastian\Desktop\Aplicación de Escritorio interactivo\EscritorioFerme\EscritorioFerme\bin\Debug\EscritorioFerme.pdb
+C:\Users\Sebastian\Desktop\Aplicación de Escritorio interactivo\EscritorioFerme\EscritorioFerme\bin\Debug\MaterialDesignColors.dll
+C:\Users\Sebastian\Desktop\Aplicación de Escritorio interactivo\EscritorioFerme\EscritorioFerme\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\Sebastian\Desktop\Aplicación de Escritorio interactivo\EscritorioFerme\EscritorioFerme\bin\Debug\MaterialDesignColors.pdb
+C:\Users\Sebastian\Desktop\Aplicación de Escritorio interactivo\EscritorioFerme\EscritorioFerme\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\Sebastian\Desktop\Aplicación de Escritorio interactivo\EscritorioFerme\EscritorioFerme\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\Sebastian\Desktop\Aplicación de Escritorio interactivo\EscritorioFerme\EscritorioFerme\obj\Debug\EscritorioFerme.csprojAssemblyReference.cache
+C:\Users\Sebastian\Desktop\Aplicación de Escritorio interactivo\EscritorioFerme\EscritorioFerme\obj\Debug\MainWindow.g.cs
+C:\Users\Sebastian\Desktop\Aplicación de Escritorio interactivo\EscritorioFerme\EscritorioFerme\obj\Debug\UserControlClientes.g.cs
+C:\Users\Sebastian\Desktop\Aplicación de Escritorio interactivo\EscritorioFerme\EscritorioFerme\obj\Debug\UserControlColaboradores.g.cs
+C:\Users\Sebastian\Desktop\Aplicación de Escritorio interactivo\EscritorioFerme\EscritorioFerme\obj\Debug\UserControlOrden.g.cs
+C:\Users\Sebastian\Desktop\Aplicación de Escritorio interactivo\EscritorioFerme\EscritorioFerme\obj\Debug\UserControlProducto.g.cs
+C:\Users\Sebastian\Desktop\Aplicación de Escritorio interactivo\EscritorioFerme\EscritorioFerme\obj\Debug\UserControlProveedores.g.cs
+C:\Users\Sebastian\Desktop\Aplicación de Escritorio interactivo\EscritorioFerme\EscritorioFerme\obj\Debug\App.g.cs
+C:\Users\Sebastian\Desktop\Aplicación de Escritorio interactivo\EscritorioFerme\EscritorioFerme\obj\Debug\EscritorioFerme_MarkupCompile.cache
+C:\Users\Sebastian\Desktop\Aplicación de Escritorio interactivo\EscritorioFerme\EscritorioFerme\obj\Debug\EscritorioFerme_MarkupCompile.lref
+C:\Users\Sebastian\Desktop\Aplicación de Escritorio interactivo\EscritorioFerme\EscritorioFerme\obj\Debug\App.baml
+C:\Users\Sebastian\Desktop\Aplicación de Escritorio interactivo\EscritorioFerme\EscritorioFerme\obj\Debug\MainWindow.baml
+C:\Users\Sebastian\Desktop\Aplicación de Escritorio interactivo\EscritorioFerme\EscritorioFerme\obj\Debug\UserControlClientes.baml
+C:\Users\Sebastian\Desktop\Aplicación de Escritorio interactivo\EscritorioFerme\EscritorioFerme\obj\Debug\UserControlColaboradores.baml
+C:\Users\Sebastian\Desktop\Aplicación de Escritorio interactivo\EscritorioFerme\EscritorioFerme\obj\Debug\UserControlOrden.baml
+C:\Users\Sebastian\Desktop\Aplicación de Escritorio interactivo\EscritorioFerme\EscritorioFerme\obj\Debug\UserControlProducto.baml
+C:\Users\Sebastian\Desktop\Aplicación de Escritorio interactivo\EscritorioFerme\EscritorioFerme\obj\Debug\UserControlProveedores.baml
+C:\Users\Sebastian\Desktop\Aplicación de Escritorio interactivo\EscritorioFerme\EscritorioFerme\obj\Debug\EscritorioFerme.g.resources
+C:\Users\Sebastian\Desktop\Aplicación de Escritorio interactivo\EscritorioFerme\EscritorioFerme\obj\Debug\EscritorioFerme.Properties.Resources.resources
+C:\Users\Sebastian\Desktop\Aplicación de Escritorio interactivo\EscritorioFerme\EscritorioFerme\obj\Debug\EscritorioFerme.csproj.GenerateResource.cache
+C:\Users\Sebastian\Desktop\Aplicación de Escritorio interactivo\EscritorioFerme\EscritorioFerme\obj\Debug\EscritorioFerme.csproj.CopyComplete
+C:\Users\Sebastian\Desktop\Aplicación de Escritorio interactivo\EscritorioFerme\EscritorioFerme\obj\Debug\EscritorioFerme.exe
+C:\Users\Sebastian\Desktop\Aplicación de Escritorio interactivo\EscritorioFerme\EscritorioFerme\obj\Debug\EscritorioFerme.pdb
+C:\Users\Sebastian\Desktop\Aplicación de Escritorio interactivo\EscritorioFerme\EscritorioFerme\obj\Debug\UserControlIndex.g.cs
+C:\Users\Sebastian\Desktop\Aplicación de Escritorio interactivo\EscritorioFerme\EscritorioFerme\obj\Debug\UserControlIndex.baml
+C:\Users\Sebastian\Desktop\Aplicación de Escritorio interactivo\EscritorioFerme\EscritorioFerme\obj\Debug\AgregarColaboradorWpf.g.cs
+C:\Users\Sebastian\Desktop\Aplicación de Escritorio interactivo\EscritorioFerme\EscritorioFerme\obj\Debug\AgregarColaboradorWpf.baml
+C:\Users\Sebastian\Desktop\Aplicación de Escritorio interactivo\EscritorioFerme\EscritorioFerme\obj\Debug\AgregarClienteWpf.g.cs
+C:\Users\Sebastian\Desktop\Aplicación de Escritorio interactivo\EscritorioFerme\EscritorioFerme\obj\Debug\AgregarProductosWpf.g.cs
+C:\Users\Sebastian\Desktop\Aplicación de Escritorio interactivo\EscritorioFerme\EscritorioFerme\obj\Debug\AgregarProveedoresWpf.g.cs
+C:\Users\Sebastian\Desktop\Aplicación de Escritorio interactivo\EscritorioFerme\EscritorioFerme\obj\Debug\OrdenCompraWpf.g.cs
+C:\Users\Sebastian\Desktop\Aplicación de Escritorio interactivo\EscritorioFerme\EscritorioFerme\obj\Debug\AgregarClienteWpf.baml
+C:\Users\Sebastian\Desktop\Aplicación de Escritorio interactivo\EscritorioFerme\EscritorioFerme\obj\Debug\AgregarProductosWpf.baml
+C:\Users\Sebastian\Desktop\Aplicación de Escritorio interactivo\EscritorioFerme\EscritorioFerme\obj\Debug\AgregarProveedoresWpf.baml
+C:\Users\Sebastian\Desktop\Aplicación de Escritorio interactivo\EscritorioFerme\EscritorioFerme\obj\Debug\OrdenCompraWpf.baml
+C:\Users\Sebastian\Desktop\Aplicación de Escritorio interactivo\EscritorioFerme\EscritorioFerme\obj\Debug\Login.g.cs
+C:\Users\Sebastian\Desktop\Aplicación de Escritorio interactivo\EscritorioFerme\EscritorioFerme\obj\Debug\Login.baml
+C:\Users\Sebastian\Desktop\Aplicación de Escritorio interactivo\EscritorioFerme\EscritorioFerme\bin\Debug\Oracle.ManagedDataAccess.dll
+C:\Users\Sebastian\Desktop\Aplicación de Escritorio interactivo\EscritorioFerme\EscritorioFerme\obj\Debug\EscritorioFerme.csproj.CoreCompileInputs.cache
+C:\Users\Sebastian\Desktop\Aplicación de Escritorio interactivo\EscritorioFerme\EscritorioFerme\bin\Debug\CapaDatosAccess.dll
+C:\Users\Sebastian\Desktop\Aplicación de Escritorio interactivo\EscritorioFerme\EscritorioFerme\bin\Debug\CapaDatosAccess.pdb
+C:\Users\Sebastian\Desktop\Aplicación de Escritorio interactivo\EscritorioFerme\EscritorioFerme\bin\Debug\CapaDatosAccess.dll.config
+C:\Users\Sebastian\Desktop\Aplicación de Escritorio interactivo\EscritorioFerme\EscritorioFerme\bin\Debug\Notifications.Wpf.dll
+C:\Users\Sebastian\Desktop\Aplicación de Escritorio interactivo\EscritorioFerme\EscritorioFerme\bin\Debug\ToastNotifications.dll
+C:\Users\Sebastian\Desktop\Aplicación de Escritorio interactivo\EscritorioFerme\EscritorioFerme\bin\Debug\ToastNotifications.Messages.dll
