@@ -60,7 +60,7 @@ namespace EscritorioFerme
             ShowCloseButton = false, // set the option to show or hide notification close button
             FreezeOnMouseEnter = true, // set the option to prevent notification dissapear automatically if user move cursor on it
         };
-        private void Cargatabla()
+        public void Cargatabla()
         {
             try
             {
@@ -180,7 +180,8 @@ namespace EscritorioFerme
         {
             try
             {
-                if (txtEliminar.Text == "")
+
+                if (txtEliminar.Text != "")
                 {
                     var Result = MessageBox.Show("Está seguro(a) de eliminar este usuario?", "Advertencia", MessageBoxButton.YesNo, MessageBoxImage.Warning);
                     if (Result == MessageBoxResult.Yes)
@@ -195,6 +196,7 @@ namespace EscritorioFerme
                         }
                         else
                         {
+                            Cargatabla();
                             notifier.ShowSuccess("Eliminado con exito", options);
                         }
                     }

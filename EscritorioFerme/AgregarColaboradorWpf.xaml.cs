@@ -31,6 +31,7 @@ namespace EscritorioFerme
     /// </summary>
     public partial class AgregarColaboradorWpf : Window
     {
+        UserControlColaboradores colLista = new UserControlColaboradores();
         OracleConnection conn = null;
         public AgregarColaboradorWpf()
         {
@@ -174,10 +175,10 @@ namespace EscritorioFerme
         {
             try
             {
-                UserControlColaboradores colLista = new UserControlColaboradores();
-                int idComuna = 0;
-                int idUsu = 0;
                 
+               
+                int idComuna = ((ComboboxItemLlenado)cboComuna.SelectedItem).Id;
+                int idUsu = ((ComboboxItemLlenado)cboUsu.SelectedItem).Id;
                 OracleCommand cmd = new OracleCommand("SP_INSERTAR_USUARIO", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 if (txtRut.Text.Trim() == "" || txtNombre.Text.Trim() == "" || txtSNombre.Text.Trim() == "" ||
@@ -189,8 +190,7 @@ namespace EscritorioFerme
                 }
                 else
                 {
-                    idComuna = ((ComboboxItemLlenado)cboComuna.SelectedItem).Id;
-                    idUsu = ((ComboboxItemLlenado)cboUsu.SelectedItem).Id;
+                    
                     cmd.Parameters.Add("RUT", OracleDbType.Varchar2).Value = txtRut.Text.Trim();
                     cmd.Parameters.Add("NOMBRE", OracleDbType.Varchar2).Value = txtNombre.Text.Trim();
                     cmd.Parameters.Add("SNOMBRE", OracleDbType.Varchar2).Value = txtSNombre.Text.Trim();
@@ -205,16 +205,14 @@ namespace EscritorioFerme
                     cmd.Parameters.Add("COMUNA", OracleDbType.Int32).Value = idComuna;
 
                     int correct = cmd.ExecuteNonQuery();
-                    if (correct > 0)
+                    if (correct == 0)
                     {
-                        colLista.dataGrid.Items.Refresh();
-                        notifier.ShowSuccess("Datos ingresados con éxito", options);
-                        
+                       
+                        notifier.ShowWarning("Los datos no se ingresaron", options);
                     }
                     else
                     {
-                        notifier.ShowWarning("Los datos no se ingresaron", options);
-                        
+                        notifier.ShowSuccess("Datos ingresados con éxito", options);
                     }
                 }
             }
@@ -229,7 +227,6 @@ namespace EscritorioFerme
         {
             try
             {
-                UserControlColaboradores colLista = new UserControlColaboradores();
 
                 int idComuna = ((ComboboxItemLlenado)cboComuna.SelectedItem).Id;
                 int idUsu = ((ComboboxItemLlenado)cboUsu.SelectedItem).Id;
@@ -264,7 +261,6 @@ namespace EscritorioFerme
                     }
                     else
                     {
-                        colLista.dataGrid.Items.Refresh();
                         notifier.ShowSuccess("Datos actualizados con éxito", options);
                     }
                 }
@@ -275,6 +271,9 @@ namespace EscritorioFerme
             }
         }
 
-       
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            colLista.Cargatabla();
+        }
     }
 }
