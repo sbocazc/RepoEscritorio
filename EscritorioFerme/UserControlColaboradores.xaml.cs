@@ -13,12 +13,12 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 //Siempre
-using CapaDatosAccess;
 using Oracle.ManagedDataAccess.Client;
 using Oracle.ManagedDataAccess.Types;
 using System.Configuration;
 using System.Data;
-
+using Controller;
+using CapaDatosAccess;
 using ToastNotifications;
 using ToastNotifications.Lifetime;
 using ToastNotifications.Position;
@@ -35,7 +35,6 @@ namespace EscritorioFerme
         OracleConnection conn = null;
         public UserControlColaboradores()
         {
-            Conexion();
             InitializeComponent();
 
         }
@@ -64,37 +63,11 @@ namespace EscritorioFerme
         {
             try
             {
-                OracleCommand cmd = new OracleCommand("FN_USUARIOS", conn);
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                List<Usuario> lista = new List<Usuario>();
-                OracleParameter output = cmd.Parameters.Add("C_USUARIO", OracleDbType.RefCursor);
-                output.Direction = ParameterDirection.ReturnValue;
-
-                cmd.ExecuteNonQuery();
-
-                OracleDataReader reader = ((OracleRefCursor)output.Value).GetDataReader();
-                
-                while (reader.Read())
-                {
-                    Usuario usu = new Usuario();
-                    usu.Rut = reader.GetString(0);
-                    usu.Nombre = reader.GetString(1);
-                    usu.Snombre = reader.GetString(2);
-                    usu.Apellido = reader.GetString(3);
-                    usu.Apematerno = reader.GetString(4);
-                    usu.Direccion = reader.GetString(5);
-                    usu.Fono = reader.GetInt32(6);
-                    usu.Email = reader.GetString(7);
-                    usu.Nomusuario = reader.GetString(8);
-                    usu.Password = reader.GetString(9);
-                    usu.TipoUsu = reader.GetString(10);
-                    usu.Comuna = reader.GetString(11);
-
-                    lista.Add(usu);
-                }
+                ColaboradoresDAO col = new ColaboradoresDAO();
+                var lista = col.listarUsuarios();
                 dataGrid.ItemsSource = lista;
-               
+                
+
             }
             catch (Exception)
             {
@@ -106,6 +79,7 @@ namespace EscritorioFerme
         private void button_Click(object sender, RoutedEventArgs e)
         {
             AgregarColaboradorWpf cola = new AgregarColaboradorWpf();
+
             cola.btnModificar.Visibility = Visibility.Collapsed;
             cola.Show();
 
@@ -116,32 +90,14 @@ namespace EscritorioFerme
             Cargatabla();
         }
 
-        private void Conexion()
-        {
-            try
-            {
-                string connectionString = ConfigurationManager.ConnectionStrings["conectionDB"].ConnectionString;
-                conn = new OracleConnection(connectionString);
-                try
-                {
-                    conn.Open();
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("Error con la conexión");
-                }
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error conexión");
-            }
-        }
+        
 
         private void dataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            object selectUser = dataGrid.SelectedItem;
+        AgregarColaboradorWpf cola = new AgregarColaboradorWpf();
 
-            AgregarColaboradorWpf cola = new AgregarColaboradorWpf();
+            object selectUser = dataGrid.SelectedItem;
+            Usuario usu = (Usuario)dataGrid.SelectedItem;
             //Aqui se puede mandar datos de la data grid a la ventana 
             cola.btnAgregarUsu.Visibility = Visibility.Collapsed;
             string Rut = (dataGrid.SelectedCells[0].Column.GetCellContent(selectUser) as TextBlock).Text;
@@ -154,8 +110,6 @@ namespace EscritorioFerme
             string email = (dataGrid.SelectedCells[7].Column.GetCellContent(selectUser) as TextBlock).Text;
             string login = (dataGrid.SelectedCells[8].Column.GetCellContent(selectUser) as TextBlock).Text;
             string lpass = (dataGrid.SelectedCells[9].Column.GetCellContent(selectUser) as TextBlock).Text;
-            string tipo = (dataGrid.SelectedCells[10].Column.GetCellContent(selectUser) as TextBlock).Text;
-            string comuna = (dataGrid.SelectedCells[11].Column.GetCellContent(selectUser) as TextBlock).Text;
 
             cola.txtRut.Text = Rut;
             cola.txtNombre.Text = nombre;
@@ -167,7 +121,6 @@ namespace EscritorioFerme
             cola.txtEmail.Text = email;
             cola.txtUsuario.Text = login;
             cola.txtContra.Text = lpass;
-           
             cola.Show();
         }
 
@@ -186,19 +139,7 @@ namespace EscritorioFerme
                     var Result = MessageBox.Show("Está seguro(a) de eliminar este usuario?", "Advertencia", MessageBoxButton.YesNo, MessageBoxImage.Warning);
                     if (Result == MessageBoxResult.Yes)
                     {
-                        OracleCommand cmd = new OracleCommand("SP_ELIMINAR_USUARIO", conn);
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.Add("RUT", OracleDbType.Varchar2).Value = txtEliminar.Text.Trim();
-                        int correct = cmd.ExecuteNonQuery();
-                        if (correct == 0)
-                        {
-                            notifier.ShowWarning("No se pudo eliminar el usuario", options);
-                        }
-                        else
-                        {
-                            Cargatabla();
-                            notifier.ShowSuccess("Eliminado con exito", options);
-                        }
+                        
                     }
                     else if (Result == MessageBoxResult.No)
                     {
@@ -217,6 +158,13 @@ namespace EscritorioFerme
             {
                 notifier.ShowError("Error");
             }
+        }
+
+        private void dataGrid_AutoGeneratedColumns(object sender, EventArgs e)
+        {
+            int columnsCount = dataGrid.Columns.Count;
+            dataGrid.Columns[12].Visibility = Visibility.Hidden;
+            dataGrid.Columns[13].Visibility = Visibility.Hidden;
         }
     }
 }

@@ -20,8 +20,8 @@ namespace CapaDatosAccess
         private string _password;
         private string _tipoUsu;
         private string _comuna;
-
-        
+        private int _idtipo;
+        private int _idcomu;
 
         public string Rut { get => _rut; set => _rut = value; }
         public string Nombre { get => _nombre; set => _nombre = value; }
@@ -35,12 +35,12 @@ namespace CapaDatosAccess
         public string Password { get => _password; set => _password = value; }
         public string TipoUsu { get => _tipoUsu; set => _tipoUsu = value; }
         public string Comuna { get => _comuna; set => _comuna = value; }
-
+        public int Idtipo { get => _idtipo; set => _idtipo = value; }
+        public int Idcomu { get => _idcomu; set => _idcomu = value; }
 
         public Usuario()
         {
 
         }
-
     }
 }

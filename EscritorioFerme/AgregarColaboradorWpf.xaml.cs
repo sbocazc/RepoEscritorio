@@ -26,6 +26,7 @@ using ToastNotifications.Core;
 
 namespace EscritorioFerme
 {
+    
     /// <summary>
     /// Interaction logic for AgregarColaboradorWpf.xaml
     /// </summary>
@@ -179,8 +180,6 @@ namespace EscritorioFerme
                
                 int idComuna = ((ComboboxItemLlenado)cboComuna.SelectedItem).Id;
                 int idUsu = ((ComboboxItemLlenado)cboUsu.SelectedItem).Id;
-                OracleCommand cmd = new OracleCommand("SP_INSERTAR_USUARIO", conn);
-                cmd.CommandType = CommandType.StoredProcedure;
                 if (txtRut.Text.Trim() == "" || txtNombre.Text.Trim() == "" || txtSNombre.Text.Trim() == "" ||
                     txtPaterno.Text.Trim() == "" || txtMaterno.Text.Trim() == "" || txtDireccion.Text.Trim() == "" ||
                     txtFono.Text.Trim() == "" || txtEmail.Text.Trim() == "" || txtUsuario.Text.Trim() == "" ||
@@ -191,29 +190,7 @@ namespace EscritorioFerme
                 else
                 {
                     
-                    cmd.Parameters.Add("RUT", OracleDbType.Varchar2).Value = txtRut.Text.Trim();
-                    cmd.Parameters.Add("NOMBRE", OracleDbType.Varchar2).Value = txtNombre.Text.Trim();
-                    cmd.Parameters.Add("SNOMBRE", OracleDbType.Varchar2).Value = txtSNombre.Text.Trim();
-                    cmd.Parameters.Add("APATERNO", OracleDbType.Varchar2).Value = txtPaterno.Text.Trim();
-                    cmd.Parameters.Add("AMATERNO", OracleDbType.Varchar2).Value = txtMaterno.Text.Trim();
-                    cmd.Parameters.Add("DIRECCION", OracleDbType.Varchar2).Value = txtDireccion.Text.Trim();
-                    cmd.Parameters.Add("FONO", OracleDbType.Int32).Value = txtFono.Text.Trim();
-                    cmd.Parameters.Add("EMAIL", OracleDbType.Varchar2).Value = txtEmail.Text.Trim();
-                    cmd.Parameters.Add("LOGIN", OracleDbType.Varchar2).Value = txtUsuario.Text.Trim();
-                    cmd.Parameters.Add("LPASSWORD", OracleDbType.Varchar2).Value = txtContra.Text.Trim();
-                    cmd.Parameters.Add("TIPO", OracleDbType.Int32).Value = idUsu;
-                    cmd.Parameters.Add("COMUNA", OracleDbType.Int32).Value = idComuna;
-
-                    int correct = cmd.ExecuteNonQuery();
-                    if (correct == 0)
-                    {
-                       
-                        notifier.ShowWarning("Los datos no se ingresaron", options);
-                    }
-                    else
-                    {
-                        notifier.ShowSuccess("Datos ingresados con éxito", options);
-                    }
+                    
                 }
             }
             catch (Exception)
@@ -230,8 +207,7 @@ namespace EscritorioFerme
 
                 int idComuna = ((ComboboxItemLlenado)cboComuna.SelectedItem).Id;
                 int idUsu = ((ComboboxItemLlenado)cboUsu.SelectedItem).Id;
-                OracleCommand cmd = new OracleCommand("SP_MODIFICAR_USUARIO", conn);
-                cmd.CommandType = CommandType.StoredProcedure;
+                
                 if (txtRut.Text.Trim() == "" || txtNombre.Text.Trim() == "" || txtSNombre.Text.Trim() == "" ||
                     txtPaterno.Text.Trim() == "" || txtMaterno.Text.Trim() == "" || txtDireccion.Text.Trim() == "" ||
                     txtFono.Text.Trim() == "" || txtEmail.Text.Trim() == "" || txtUsuario.Text.Trim() == "" ||
@@ -241,28 +217,7 @@ namespace EscritorioFerme
                 }
                 else
                 {
-                    cmd.Parameters.Add("RUT", OracleDbType.Varchar2).Value = txtRut.Text.Trim();
-                    cmd.Parameters.Add("NOMBRE", OracleDbType.Varchar2).Value = txtNombre.Text.Trim();
-                    cmd.Parameters.Add("SNOMBRE", OracleDbType.Varchar2).Value = txtSNombre.Text.Trim();
-                    cmd.Parameters.Add("APATERNO", OracleDbType.Varchar2).Value = txtPaterno.Text.Trim();
-                    cmd.Parameters.Add("AMATERNO", OracleDbType.Varchar2).Value = txtMaterno.Text.Trim();
-                    cmd.Parameters.Add("DIRECCION", OracleDbType.Varchar2).Value = txtDireccion.Text.Trim();
-                    cmd.Parameters.Add("FONO", OracleDbType.Int32).Value = txtFono.Text.Trim();
-                    cmd.Parameters.Add("EMAIL", OracleDbType.Varchar2).Value = txtEmail.Text.Trim();
-                    cmd.Parameters.Add("LOGIN", OracleDbType.Varchar2).Value = txtUsuario.Text.Trim();
-                    cmd.Parameters.Add("LPASSWORD", OracleDbType.Varchar2).Value = txtContra.Text.Trim();
-                    cmd.Parameters.Add("TIPO", OracleDbType.Int32).Value = idUsu;
-                    cmd.Parameters.Add("COMUNA", OracleDbType.Int32).Value = idComuna;
-
-                    int correct = cmd.ExecuteNonQuery();
-                    if (correct == 0)
-                    {
-                        notifier.ShowWarning("Los datos no se actualizaron", options);
-                    }
-                    else
-                    {
-                        notifier.ShowSuccess("Datos actualizados con éxito", options);
-                    }
+                    
                 }
             }
             catch (Exception)
