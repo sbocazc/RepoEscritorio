@@ -16,6 +16,7 @@ using Oracle.ManagedDataAccess.Client;
 using Oracle.ManagedDataAccess.Types;
 using System.Configuration;
 using System.Data;
+using Controller;
 //popups
 using ToastNotifications;
 using ToastNotifications.Lifetime;
@@ -36,12 +37,9 @@ namespace EscritorioFerme
         OracleConnection conn = null;
         public AgregarColaboradorWpf()
         {
-            Conexion();
             InitializeComponent();
-            CargaComboTipo();
-            CargaComboComuna();
         }
-
+        //Mensajes
         Notifier notifier = new Notifier(cfg =>
         {
             cfg.PositionProvider = new PrimaryScreenPositionProvider(
@@ -64,104 +62,7 @@ namespace EscritorioFerme
             ShowCloseButton = false, // set the option to show or hide notification close button
             FreezeOnMouseEnter = true, // set the option to prevent notification dissapear automatically if user move cursor on it
         };
-        private void CargaComboComuna()
-        {
-            try
-            {
-                OracleCommand cmd = new OracleCommand("FN_COMUNA", conn);
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                List<Comuna> listacom = new List<Comuna>();
-                ComboBoxItem m = new ComboBoxItem();
-                OracleParameter output = cmd.Parameters.Add("C_COMUNA", OracleDbType.RefCursor);
-                output.Direction = ParameterDirection.ReturnValue;
-
-                cmd.ExecuteNonQuery();
-                OracleDataReader reader = ((OracleRefCursor)output.Value).GetDataReader();
-
-                while (reader.Read())
-                {
-                    Comuna com = new Comuna();
-
-                    com.Id_comuna = reader.GetInt32(0);
-                    com.Nombre_comuna = reader.GetString(1);
-
-                    listacom.Add(com);
-                }
-                foreach (var item in listacom)
-                {
-                    ComboboxItemLlenado cbm = new ComboboxItemLlenado();
-                    cbm.Id = item.Id_comuna;
-                    cbm.Texto = item.Nombre_comuna;
-                    cboComuna.Items.Add(cbm);
-                }
-                
-            }
-            catch (Exception)
-            {
-                notifier.ShowWarning("No se pudieron cargar las comunas", options);
-            }
-        }
-
-        private void CargaComboTipo()
-        {
-            try
-            {
-                OracleCommand cmd = new OracleCommand("FN_TUSARIO", conn);
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                List<TipoUsuario> tipusu = new List<TipoUsuario>();
-                
-                OracleParameter output = cmd.Parameters.Add("C_TUSUARIO", OracleDbType.RefCursor);
-                output.Direction = ParameterDirection.ReturnValue;
-
-                cmd.ExecuteNonQuery();
-                OracleDataReader reader = ((OracleRefCursor)output.Value).GetDataReader();
-
-                while (reader.Read())
-                {
-                    TipoUsuario tip = new TipoUsuario();
-                    
-                        tip.id_tipo_usu = reader.GetInt32(0);
-                        tip.desc_tipo_usu = reader.GetString(1);
-
-                        tipusu.Add(tip);
-                }
-                foreach (var item in tipusu)
-                {
-                    ComboboxItemLlenado m = new ComboboxItemLlenado();
-                    m.Id = item.id_tipo_usu;
-                    m.Texto = item.desc_tipo_usu;
-                    cboUsu.Items.Add(m);
-                }
-            }
-            catch (Exception)
-            {
-                notifier.ShowWarning("No se pudo carga el tipo de usuario", options);
-            }
-        }
-
-        private void Conexion()
-        {
-            try
-            {
-                string connectionString = ConfigurationManager.ConnectionStrings["conectionDB"].ConnectionString;
-                conn = new OracleConnection(connectionString);
-                try
-                {
-                    conn.Open();
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("Error con la conexión");
-                }
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error conexión");
-            }
-        }
-
+        //---------------------------------------------------------------------
         private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
         {
             DragMove();
@@ -176,22 +77,20 @@ namespace EscritorioFerme
         {
             try
             {
-                
-               
-                int idComuna = ((ComboboxItemLlenado)cboComuna.SelectedItem).Id;
-                int idUsu = ((ComboboxItemLlenado)cboUsu.SelectedItem).Id;
-                if (txtRut.Text.Trim() == "" || txtNombre.Text.Trim() == "" || txtSNombre.Text.Trim() == "" ||
-                    txtPaterno.Text.Trim() == "" || txtMaterno.Text.Trim() == "" || txtDireccion.Text.Trim() == "" ||
-                    txtFono.Text.Trim() == "" || txtEmail.Text.Trim() == "" || txtUsuario.Text.Trim() == "" ||
-                    txtContra.Text.Trim() == "" || idUsu == 0 || idComuna == 0)
+                if (txtRut.Text != "")
                 {
-                    notifier.ShowWarning("Debe ingresar todos los campos", options);
+                    Colaborador cola = new Colaborador();
+                    cola.Rut_cola = txtRut.Text.Trim();
+                    cola.Activo = 1;
+                    ColaboradoresDAO dao = new ColaboradoresDAO();
+                    dao.insertar(cola);
                 }
                 else
                 {
-                    
-                    
+
                 }
+                
+                
             }
             catch (Exception)
             {
@@ -205,20 +104,7 @@ namespace EscritorioFerme
             try
             {
 
-                int idComuna = ((ComboboxItemLlenado)cboComuna.SelectedItem).Id;
-                int idUsu = ((ComboboxItemLlenado)cboUsu.SelectedItem).Id;
-                
-                if (txtRut.Text.Trim() == "" || txtNombre.Text.Trim() == "" || txtSNombre.Text.Trim() == "" ||
-                    txtPaterno.Text.Trim() == "" || txtMaterno.Text.Trim() == "" || txtDireccion.Text.Trim() == "" ||
-                    txtFono.Text.Trim() == "" || txtEmail.Text.Trim() == "" || txtUsuario.Text.Trim() == "" ||
-                    txtContra.Text.Trim() == "" || idUsu == 0 || idComuna == 0)
-                {
-                    notifier.ShowWarning("Debe ingresar todos los campos", options);
-                }
-                else
-                {
-                    
-                }
+               
             }
             catch (Exception)
             {
