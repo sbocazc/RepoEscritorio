@@ -17,26 +17,29 @@
                 </StackPanel>
             </Grid>
         </StackPanel>
-        <Grid HorizontalAlignment="Left" Height="369" Margin="10,59,0,0" VerticalAlignment="Top" Width="627">
-            <TextBox x:Name="textBox_Copy1" HorizontalAlignment="Left" Height="23" Margin="252,62,0,0" TextWrapping="Wrap" Text="Ingrese Nombre" VerticalAlignment="Top" Width="135"/>
-            <TextBox x:Name="textBox_Copy4" HorizontalAlignment="Left" Height="23" Margin="252,286,0,0" TextWrapping="Wrap" Text="Ingrese Precio" VerticalAlignment="Top" Width="135"/>
-            <Label x:Name="label" Content="Proveedor" HorizontalAlignment="Left" Margin="15,23,0,0" VerticalAlignment="Top" Width="108"/>
-            <Label x:Name="label_Copy" Content="Tipo de producto" HorizontalAlignment="Left" Margin="236,149,0,0" VerticalAlignment="Top" Width="108"/>
+        <Grid HorizontalAlignment="Left" Height="369" Margin="10,59,0,0" VerticalAlignment="Top" Width="655">
+            <TextBox x:Name="Txt_Nombre_Producto" HorizontalAlignment="Left" Height="45" Margin="15,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="382"/>
+            <TextBox x:Name="Txt_Precio_Producto" HorizontalAlignment="Left" Height="36" Margin="252,286,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="135"/>
+            <Label x:Name="label" Content="Proveedor" HorizontalAlignment="Left" Margin="15,132,0,0" VerticalAlignment="Top" Width="108"/>
+            <Label x:Name="label_Copy" Content="Tipo de producto" HorizontalAlignment="Left" Margin="236,132,0,0" VerticalAlignment="Top" Width="108"/>
             <Label x:Name="label_Copy1" Content="Precio" HorizontalAlignment="Left" Margin="236,253,0,0" VerticalAlignment="Top" Width="108"/>
-            <Label x:Name="label_Copy2" Content="Descripción" HorizontalAlignment="Left" Margin="15,253,0,0" VerticalAlignment="Top" Width="108"/>
-            <Label x:Name="label_Copy3" Content="Fecha Vencimiento" Margin="15,149,338,0" VerticalAlignment="Top"/>
-            <Label x:Name="label_Copy4" Content="Nombre Producto" Margin="236,23,227,0" VerticalAlignment="Top"/>
-            <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="252,173,0,0" VerticalAlignment="Top" Width="135"/>
-            <TextBox x:Name="textBox_Copy" HorizontalAlignment="Left" Height="23" Margin="458,62,0,0" TextWrapping="Wrap" Text="Ingrese Nombre" VerticalAlignment="Top" Width="135"/>
-            <TextBox x:Name="textBox_Copy2" HorizontalAlignment="Left" Height="23" Margin="458,178,0,0" TextWrapping="Wrap" Text="Ingrese Nombre" VerticalAlignment="Top" Width="135"/>
-            <Label x:Name="label_Copy5" Content="Stock Critico" Margin="429,149,34,0" VerticalAlignment="Top"/>
-            <Label x:Name="label_Copy6" Content="Stock" Margin="429,23,34,0" VerticalAlignment="Top"/>
-            <DatePicker HorizontalAlignment="Left" Margin="29,178,0,0" VerticalAlignment="Top" Width="135"/>
-            <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="29,286,0,0" TextWrapping="Wrap" Text="Descripción del producto" VerticalAlignment="Top" Height="56" Width="120"/>
-            <ComboBox x:Name="comboBox_Copy" HorizontalAlignment="Left" Margin="29,57,0,0" VerticalAlignment="Top" Width="135"/>
+            <Label x:Name="label_Copy2" Content="IdProducto a modificar" HorizontalAlignment="Left" Margin="15,253,0,0" VerticalAlignment="Top" Width="134" Visibility="Hidden"/>
+            <Label x:Name="label_Copy3" Content="Fecha Vencimiento" Margin="15,272,490,0" VerticalAlignment="Top"/>
+            <Label x:Name="label_Copy4" Content="Nombre Producto" Margin="30,23,433,0" VerticalAlignment="Top"/>
+            <ComboBox x:Name="Cbo_TipoClase_Producto" HorizontalAlignment="Left" Margin="219,178,0,0" VerticalAlignment="Top" Width="178" Loaded="Cbo_TipoClase_Producto_Loaded" Height="33"/>
+            <TextBox x:Name="Txt_Stock_Producto" HorizontalAlignment="Left" Height="35" Margin="458,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="176"/>
+            <TextBox x:Name="Txt_StockCri_Producto" HorizontalAlignment="Left" Height="36" Margin="458,286,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="135"/>
+            <Label x:Name="label_Copy5" Content="Stock Critico" Margin="453,252,10,0" VerticalAlignment="Top"/>
+            <Label x:Name="label_Copy6" Content="Stock" Margin="453,23,10,0" VerticalAlignment="Top"/>
+            <DatePicker x:Name="dt_Vencimiento_Producto" HorizontalAlignment="Left" Margin="30,314,0,0" VerticalAlignment="Top" Width="135"/>
+            <ComboBox x:Name="Cbo_Proveedor_Producto" HorizontalAlignment="Left" Margin="15,183,0,0" VerticalAlignment="Top" Width="167" SelectionChanged="Cbo_Proveedor_ProductoSelectionChanged" Loaded="Cbo_Proveedor_Producto_Loaded"/>
+            <TextBox x:Name="Txt_idamodificar_Producto" HorizontalAlignment="Left" Height="43" Margin="15,296,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="134" IsEnabled="False" SelectionOpacity="-3" Visibility="Hidden"/>
+            <ComboBox x:Name="Cbo_Clase_Producto" HorizontalAlignment="Left" Margin="429,183,0,0" VerticalAlignment="Top" Width="205" Loaded="Cbo_Clase_Producto_Loaded" SelectionChanged="Cbo_Clase_Producto_SelectionChanged"/>
+            <Label Content="Categoria" HorizontalAlignment="Left" Margin="429,132,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.559,-0.292"/>
         </Grid>
-        <Button x:Name="button" Content="Agregar" HorizontalAlignment="Left" Margin="525,433,0,0" VerticalAlignment="Top" Width="90" Background="#FF0055AA" BorderBrush="{x:Null}" Click="button_Click"/>
-        <Button x:Name="button_Copy" Content="Cancelar" HorizontalAlignment="Left" Margin="29,433,0,0" VerticalAlignment="Top" Width="93" Background="#FFB61C1C" BorderBrush="{x:Null}" Click="button_Copy_Click"/>
-        <Button x:Name="button_Copy1" Content="Modificar" HorizontalAlignment="Left" Margin="380,433,0,0" VerticalAlignment="Top" Width="120" Background="#FF4B4BFF" BorderBrush="{x:Null}" Click="button_Click"/>
+        <Button x:Name="Btn_Agregar_Producto" Content="Agregar" HorizontalAlignment="Left" Margin="525,433,0,0" VerticalAlignment="Top" Width="90" Background="#FF0055AA" BorderBrush="{x:Null}" Click="Btn_Agregar_Producto_Click"/>
+
+        <Button x:Name="Btn_Cancelar_Producto" Content="Cancelar" HorizontalAlignment="Left" Margin="27,444,0,0" VerticalAlignment="Top" Width="93" Background="#FFB61C1C" BorderBrush="{x:Null}" Click="Btn_Cancelar_Producto_Click"/>
+        <Button x:Name="Btn_Modificar_Producto" Content="Modificar" HorizontalAlignment="Left" Margin="380,433,0,0" VerticalAlignment="Top" Width="120" Background="#FF4B4BFF" BorderBrush="{x:Null}" Click="Btn_Modificar_Producto_click"/>
     </Grid>
 </Window>

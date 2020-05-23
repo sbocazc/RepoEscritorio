@@ -18,25 +18,24 @@
             </Grid>
         </StackPanel>
         <Grid HorizontalAlignment="Left" Height="369" Margin="34,59,0,0" VerticalAlignment="Top" Width="803">
-            <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="29,62,0,0" TextWrapping="Wrap" Text="Ingrese Rut" VerticalAlignment="Top" Width="120"/>
-            <TextBox x:Name="textBox_Copy" HorizontalAlignment="Left" Height="23" Margin="29,299,0,0" TextWrapping="Wrap" Text="Ingrese Fono" VerticalAlignment="Top" Width="120"/>
-            <TextBox x:Name="textBox_Copy1" HorizontalAlignment="Left" Height="23" Margin="265,62,0,0" TextWrapping="Wrap" Text="Ingrese Nombre" VerticalAlignment="Top" Width="135"/>
-            <TextBox x:Name="textBox_Copy3" HorizontalAlignment="Left" Height="23" Margin="29,178,0,0" TextWrapping="Wrap" Text="Ingrese Dirección" VerticalAlignment="Top" Width="120"/>
-            <TextBox x:Name="textBox_Copy4" HorizontalAlignment="Left" Height="23" Margin="265,299,0,0" TextWrapping="Wrap" Text="Ingrese Email" VerticalAlignment="Top" Width="135"/>
-            <Label x:Name="label" Content="Rut Cliente" HorizontalAlignment="Left" Margin="15,23,0,0" VerticalAlignment="Top" Width="108"/>
-            <Label x:Name="label_Copy" Content="Apellido Paterno" HorizontalAlignment="Left" Margin="252,149,0,0" VerticalAlignment="Top" Width="108"/>
-            <Label x:Name="label_Copy1" Content="Email" HorizontalAlignment="Left" Margin="252,270,0,0" VerticalAlignment="Top" Width="108"/>
-            <Label x:Name="label_Copy2" Content="Fono" HorizontalAlignment="Left" Margin="15,270,0,0" VerticalAlignment="Top" Width="108"/>
-            <Label x:Name="label_Copy3" Content="Dirección" Margin="15,149,680,0" VerticalAlignment="Top"/>
-            <Label x:Name="label_Copy4" Content="Nombre" Margin="252,23,403,0" VerticalAlignment="Top"/>
-            <Label x:Name="label_Copy6" Content="Apellido Materno" Margin="493,149,162,0" VerticalAlignment="Top"/>
-            <Label x:Name="label_Copy7" Content="Segundo Nombre" Margin="493,23,162,0" VerticalAlignment="Top"/>
-            <TextBox x:Name="textBox_Copy2" HorizontalAlignment="Left" Height="23" Margin="493,184,0,0" TextWrapping="Wrap" Text="Ingrese apellido materno" VerticalAlignment="Top" Width="163"/>
-            <TextBox x:Name="textBox_Copy5" HorizontalAlignment="Left" Height="23" Margin="493,68,0,0" TextWrapping="Wrap" Text="Ingrese segundo nombre" VerticalAlignment="Top" Width="163"/>
-            <TextBox x:Name="textBox_Copy6" HorizontalAlignment="Left" Height="23" Margin="265,184,0,0" TextWrapping="Wrap" Text="Ingrese apellido paterno" VerticalAlignment="Top" Width="135"/>
+            <TextBox x:Name="txt_rut_cliente" HorizontalAlignment="Left" Height="23" Margin="29,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="txt_fono_cliente" HorizontalAlignment="Left" Height="23" Margin="29,299,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="txt_nombres_cliente" HorizontalAlignment="Left" Height="23" Margin="349,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="332"/>
+            <TextBox x:Name="txt_direccion_cliente" HorizontalAlignment="Left" Height="23" Margin="29,178,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="300"/>
+            <TextBox x:Name="txt_email_cliente" HorizontalAlignment="Left" Height="23" Margin="265,299,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="135"/>
+            <Label x:Name="lbl_rut_cliente" Content="Rut Cliente" HorizontalAlignment="Left" Margin="15,23,0,0" VerticalAlignment="Top" Width="108"/>
+            <Label x:Name="lbl_appat_cliente" Content="Apellidos" HorizontalAlignment="Left" Margin="349,132,0,0" VerticalAlignment="Top" Width="108"/>
+            <Label x:Name="lbl_email_cliente" Content="Email" HorizontalAlignment="Left" Margin="252,270,0,0" VerticalAlignment="Top" Width="108"/>
+            <Label x:Name="lbl_fono_cliente" Content="Fono" HorizontalAlignment="Left" Margin="15,270,0,0" VerticalAlignment="Top" Width="108"/>
+            <Label x:Name="lbl_direccion_cliente" Content="Dirección" Margin="15,149,680,0" VerticalAlignment="Top"/>
+            <Label x:Name="lbl_nombre_cliente" Content="Nombre" Margin="349,23,306,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="txt_apellidos_cliente" HorizontalAlignment="Left" Height="23" Margin="349,178,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="332"/>
+            <ComboBox x:Name="Cbo_comuna_Cliente" HorizontalAlignment="Left" Margin="521,299,0,0" VerticalAlignment="Top" Width="120" Loaded="Cbo_comuna_Cliente_loaded"/>
+            <Label x:Name="lbl_comuna_cliente" Content="Comuna" HorizontalAlignment="Left" Margin="549,270,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="txt_modificar_cliente" HorizontalAlignment="Left" Height="23" Margin="673,253,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False" Visibility="Hidden"/>
         </Grid>
-        <Button x:Name="button" Content="Agregar" HorizontalAlignment="Left" Margin="747,433,0,0" VerticalAlignment="Top" Width="90" Background="#FF0055AA" BorderBrush="{x:Null}" Click="button_Click"/>
-        <Button x:Name="button_Copy" Content="Cancelar" HorizontalAlignment="Left" Margin="82,433,0,0" VerticalAlignment="Top" Width="93" Background="#FFB61C1C" BorderBrush="{x:Null}" Click="button_Copy_Click"/>
-        <Button x:Name="button_Copy1" Content="Modificar" HorizontalAlignment="Left" Margin="623,433,0,0" VerticalAlignment="Top" Width="101" Background="#FF4B4BFF" BorderBrush="{x:Null}" Click="button_Click"/>
+        <Button x:Name="btn_agregar_cliente" Content="Agregar" HorizontalAlignment="Left" Margin="747,433,0,0" VerticalAlignment="Top" Width="90" Background="#FF0055AA" BorderBrush="{x:Null}" Click="btn_agregar_cliente_Cliente"/>
+        <Button x:Name="btn_cancelar_cliente" Content="Cancelar" HorizontalAlignment="Left" Margin="82,433,0,0" VerticalAlignment="Top" Width="93" Background="#FFB61C1C" BorderBrush="{x:Null}" Click="btn_cancelar_cliente_Click"/>
+        <Button x:Name="btn_modificar_cliente" Content="Modificar" HorizontalAlignment="Left" Margin="623,433,0,0" VerticalAlignment="Top" Width="101" Background="#FF4B4BFF" BorderBrush="{x:Null}" Click="btn_modificar_cliente_CLick"/>
     </Grid>
 </Window>

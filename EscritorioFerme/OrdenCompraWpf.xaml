@@ -26,16 +26,16 @@
             </Grid>
         </StackPanel>
         <Grid HorizontalAlignment="Left" Height="270" Margin="66,59,0,0" VerticalAlignment="Top" Width="451">
-            <TextBox x:Name="textBox_Copy" HorizontalAlignment="Left" Height="23" Margin="29,205,0,0" TextWrapping="Wrap" Text="Ingrese nombre del producto" VerticalAlignment="Top" Width="161"/>
-            <TextBox x:Name="textBox_Copy4" HorizontalAlignment="Left" Height="23" Margin="265,205,0,0" TextWrapping="Wrap" Text="Cantidad" VerticalAlignment="Top" Width="135"/>
+            <TextBox x:Name="txtCantidad" HorizontalAlignment="Left" Height="23" Margin="265,205,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="135"/>
             <Label x:Name="label" Content="Proveedor" HorizontalAlignment="Left" Margin="15,23,0,0" VerticalAlignment="Top" Width="108"/>
             <Label x:Name="label_Copy1" Content="Cantidad del producto" HorizontalAlignment="Left" Margin="252,156,0,0" VerticalAlignment="Top" Width="133"/>
             <Label x:Name="label_Copy2" Content="Nombre Producto" HorizontalAlignment="Left" Margin="15,156,0,0" VerticalAlignment="Top" Width="108"/>
             <Label x:Name="label_Copy4" Content="Empleado Solicitante" Margin="252,23,51,0" VerticalAlignment="Top"/>
-            <ComboBox x:Name="comboBox_Copy" HorizontalAlignment="Left" Margin="265,52,0,0" VerticalAlignment="Top" Width="135"/>
-            <ComboBox x:Name="comboBox_Copy1" HorizontalAlignment="Left" Margin="29,52,0,0" VerticalAlignment="Top" Width="135"/>
+            <ComboBox x:Name="cboEmpleado" HorizontalAlignment="Left" Margin="265,52,0,0" VerticalAlignment="Top" Width="135"/>
+            <ComboBox x:Name="cboProveedor" HorizontalAlignment="Left" Margin="29,52,0,0" VerticalAlignment="Top" Width="135"/>
+            <ComboBox x:Name="cboProducto" HorizontalAlignment="Left" Margin="29,205,0,0" VerticalAlignment="Top" Width="135"/>
         </Grid>
-        <Button x:Name="button" Content="Enviar" HorizontalAlignment="Left" Margin="427,334,0,0" VerticalAlignment="Top" Width="90" Background="#FF0055AA" BorderBrush="{x:Null}" Click="button_Click"/>
-        <Button x:Name="button_Copy" Content="Cancelar" HorizontalAlignment="Left" Margin="66,334,0,0" VerticalAlignment="Top" Width="93" Background="#FFB61C1C" BorderBrush="{x:Null}" Click="button_Copy_Click"/>
+        <Button x:Name="btnEnviar" Content="Enviar" HorizontalAlignment="Left" Margin="427,334,0,0" VerticalAlignment="Top" Width="90" Background="#FF0055AA" BorderBrush="{x:Null}" Click="button_Click"/>
+        <Button x:Name="btnCancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="66,334,0,0" VerticalAlignment="Top" Width="93" Background="#FFB61C1C" BorderBrush="{x:Null}" Click="button_Copy_Click"/>
     </Grid>
 </Window>

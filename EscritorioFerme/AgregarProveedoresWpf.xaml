@@ -17,16 +17,19 @@
                 </StackPanel>
             </Grid>
         </StackPanel>
-        <Grid HorizontalAlignment="Left" Height="229" Margin="82,59,0,0" VerticalAlignment="Top" Width="438">
-            <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="29,62,0,0" TextWrapping="Wrap" Text="Ingrese Rut" VerticalAlignment="Top" Width="120"/>
-            <TextBox x:Name="textBox_Copy1" HorizontalAlignment="Left" Height="23" Margin="265,62,0,0" TextWrapping="Wrap" Text="Ingrese Fono" VerticalAlignment="Top" Width="135"/>
-            <TextBox x:Name="textBox_Copy3" HorizontalAlignment="Left" Height="23" Margin="29,178,0,0" TextWrapping="Wrap" Text="Ingrese Rubro" VerticalAlignment="Top" Width="120"/>
-            <Label x:Name="label" Content="Rut Proveedor" HorizontalAlignment="Left" Margin="15,23,0,0" VerticalAlignment="Top" Width="108"/>
-            <Label x:Name="label_Copy3" Content="Rubro" Margin="15,149,338,0" VerticalAlignment="Top"/>
-            <Label x:Name="label_Copy4" Content="Fono" Margin="252,23,51,0" VerticalAlignment="Top"/>
+        <Grid HorizontalAlignment="Left" Height="236" Margin="27,59,0,0" VerticalAlignment="Top" Width="493">
+            <TextBox x:Name="txt_numero_proveedor" HorizontalAlignment="Left" Height="43" Margin="29,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="txt_fono_proveedor" HorizontalAlignment="Left" Height="29" Margin="261,178,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="135"/>
+            <TextBox x:Name="txt_rubro_proveedor" HorizontalAlignment="Left" Height="29" Margin="29,178,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="146"/>
+            <Label x:Name="lbl_numero_prove" Content="Numero de Proveedor" HorizontalAlignment="Left" Margin="15,23,0,0" VerticalAlignment="Top" Width="134"/>
+            <Label x:Name="lbl_rubro_proveedor" Content="Rubro" Margin="15,149,338,0" VerticalAlignment="Top"/>
+            <Label x:Name="lbl_fono_prove" Content="Fono" Margin="261,149,153,0" VerticalAlignment="Top"/>
+            <Label x:Name="lbl_nombre_proveedor" Content="Nombre Proveedor" HorizontalAlignment="Left" Margin="276,23,0,0" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="txt_nombre_proveedor" HorizontalAlignment="Left" Height="37" Margin="276,68,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="188"/>
         </Grid>
-        <Button x:Name="button" Content="Agregar" HorizontalAlignment="Left" Margin="430,316,0,0" VerticalAlignment="Top" Width="90" Background="#FF0055AA" BorderBrush="{x:Null}" Click="button_Click"/>
-        <Button x:Name="button_Copy" Content="Cancelar" HorizontalAlignment="Left" Margin="82,316,0,0" VerticalAlignment="Top" Width="93" Background="#FFB61C1C" BorderBrush="{x:Null}" Click="button_Copy_Click"/>
-        <Button x:Name="button_Copy1" Content="Modificar" HorizontalAlignment="Left" Margin="309,316,0,0" VerticalAlignment="Top" Width="101" Background="#FF4B4BFF" BorderBrush="{x:Null}" Click="button_Click"/>
+        <Button x:Name="btn_agregar_proveedor" Content="Agregar" HorizontalAlignment="Left" Margin="430,327,0,0" VerticalAlignment="Top" Width="90" Background="#FF0055AA" BorderBrush="{x:Null}" Click="btn_agregar_proveedor_Click"/>
+        <Button x:Name="btn_cancelar_proveedor" Content="Cancelar" HorizontalAlignment="Left" Margin="76,327,0,0" VerticalAlignment="Top" Width="93" Background="#FFB61C1C" BorderBrush="{x:Null}" Click="btn_cancelar_proveedor_click"/>
+        <Button x:Name="btn_modificar_proveedor" Content="Modificar" HorizontalAlignment="Left" Margin="303,327,0,0" VerticalAlignment="Top" Width="101" Background="#FF4B4BFF" BorderBrush="{x:Null}" Click="btn_modificar_proveedor_click"/>
+        <TextBox x:Name="txt_modificar_Proveedor" HorizontalAlignment="Left" Height="23" Margin="184,295,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False" Visibility="Hidden"/>
     </Grid>
 </Window>

@@ -25,29 +25,7 @@
 
         </materialDesign:TransitioningContent>
         <StackPanel HorizontalAlignment="Left" Height="447" Margin="34,120,0,0" VerticalAlignment="Top" Width="807">
-            <DataGrid x:Name="dataGrid" Height="446" ColumnWidth="*" SelectionChanged="dataGrid_SelectionChanged">
-                <DataGrid.ColumnHeaderStyle>
-                    <Style TargetType="{x:Type DataGridColumnHeader}">
-                        <Setter Property="Padding" Value="0 7"/>
-                        <Setter Property="FontWeight" Value="Bold"/>
-                        <Setter Property="FontSize" Value="14"></Setter>
-                        <Setter Property="TextElement.Foreground" Value="Black" />
-                        <Setter Property="Background" Value="Crimson"></Setter>
-                        <Setter Property="Foreground" Value="White"></Setter>
-                    </Style>
-                </DataGrid.ColumnHeaderStyle>
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="Rut Proveedor"/>
-                    <DataGridTextColumn Header="Nombre Proveedor"/>
-                    <DataGridTextColumn Header="Rut Solicitante"/>
-                    <DataGridTextColumn Header="Nombre Solicitante"/>
-                    <DataGridTextColumn Header="Cargo"/>
-                    <DataGridTextColumn Header="Producto Solicitado"/>
-                    <DataGridTextColumn Header="Cantidad"/>
-                    <DataGridTextColumn Header="Opciones"/>
-                </DataGrid.Columns>
-            </DataGrid>
-
+            <DataGrid x:Name="dtOrdenCompra" Height="448"/>
         </StackPanel>
     </Grid>
 </UserControl>

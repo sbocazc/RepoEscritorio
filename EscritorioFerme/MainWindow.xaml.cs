@@ -77,6 +77,11 @@ namespace EscritorioFerme
             TransitionSlide.OnApplyTemplate();
             GridCursor.Margin = new Thickness(0, (150 + (60 * indice)), 0, 0);
         }
+
+        private void ListViewItem_Selected(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 
    

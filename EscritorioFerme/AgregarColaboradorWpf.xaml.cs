@@ -33,8 +33,6 @@ namespace EscritorioFerme
     /// </summary>
     public partial class AgregarColaboradorWpf : Window
     {
-        UserControlColaboradores colLista = new UserControlColaboradores();
-        OracleConnection conn = null;
         public AgregarColaboradorWpf()
         {
             InitializeComponent();
@@ -84,13 +82,14 @@ namespace EscritorioFerme
                     cola.Activo = 1;
                     ColaboradoresDAO dao = new ColaboradoresDAO();
                     dao.insertar(cola);
+                  
+                    notifier.ShowSuccess("Permiso registrado con éxito", options);
+                    CargaTabla();
                 }
                 else
                 {
-
+                    notifier.ShowInformation("Debe ingresar un rut", options);
                 }
-                
-                
             }
             catch (Exception)
             {
@@ -98,23 +97,71 @@ namespace EscritorioFerme
             }
             
         }
+        private void CargaTabla()
+        {
+            ColaboradoresDAO cola = new ColaboradoresDAO();
+            var lista = cola.listarUsuarios();
+            dtg_Colaboradores.ItemsSource = lista;
+        }
+        private void Window_Closed(object sender, EventArgs e)
+        {
 
-        private void btnModificar_Click(object sender, RoutedEventArgs e)
+        }
+        private void dtg_Colaboradores_Loaded(object sender, RoutedEventArgs e)
+        {
+            CargaTabla();
+        }
+        private void dtg_Colaboradores_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             try
             {
-
-               
+                object selectUser = dtg_Colaboradores.SelectedItem;
+                string Rut = (dtg_Colaboradores.SelectedCells[0].Column.GetCellContent(selectUser) as TextBlock).Text;
+                string nombre = (dtg_Colaboradores.SelectedCells[1].Column.GetCellContent(selectUser) as TextBlock).Text;
+                string Apellido = (dtg_Colaboradores.SelectedCells[2].Column.GetCellContent(selectUser) as TextBlock).Text;
+                string Desc = (dtg_Colaboradores.SelectedCells[3].Column.GetCellContent(selectUser) as TextBlock).Text;
+                string login = (dtg_Colaboradores.SelectedCells[4].Column.GetCellContent(selectUser) as TextBlock).Text;
+                string pass = (dtg_Colaboradores.SelectedCells[5].Column.GetCellContent(selectUser) as TextBlock).Text;
+                string activo = (dtg_Colaboradores.SelectedCells[6].Column.GetCellContent(selectUser) as TextBlock).Text;
+                if (Rut != "" || nombre != "" || Apellido != "" || Desc != "" || login != "" || pass != "" || activo != "")
+                {
+                    if (Rut != "")
+                    {
+                        var Result = MessageBox.Show("Está seguro(a) de eliminar el permiso de este usuario?", "Advertencia", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+                        if (Result == MessageBoxResult.Yes)
+                        {
+                            Colaborador cola = new Colaborador();
+                            cola.Rut_cola = Rut;
+                            ColaboradoresDAO dao = new ColaboradoresDAO();
+                            if (dao.eliminar(cola) == true)
+                            {
+                                CargaTabla();
+                            }
+                            else
+                            {
+                                notifier.ShowWarning("No se pudo eliminar el permiso", options);
+                            }
+                        }
+                        else if (Result == MessageBoxResult.No)
+                        {
+                            notifier.ShowInformation("Eliminación cancelada", options);
+                        }
+                    }
+                    else
+                    {
+                        notifier.ShowInformation("La selección fue érronea", options);
+                    }
+                }
+                else
+                {
+                    notifier.ShowInformation("Debe seleccionar una fila correcta", options);
+                }
+                
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                notifier.ShowError("Error", options);
+                notifier.ShowSuccess("Permiso eliminado con éxito", options);
             }
-        }
-
-        private void Window_Closed(object sender, EventArgs e)
-        {
-            colLista.Cargatabla();
         }
     }
 }

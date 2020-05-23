@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EscritorioFerme"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        mc:Ignorable="d" Height="339.5" Width="744" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" BorderBrush="Black" Background="White" OpacityMask="Black" ShowInTaskbar="False" WindowStyle="None" SnapsToDevicePixels="True" BorderThickness="3" Closed="Window_Closed">
+        mc:Ignorable="d" Height="452" Width="841.5" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" BorderBrush="Black" Background="White" OpacityMask="Black" ShowInTaskbar="False" WindowStyle="None" SnapsToDevicePixels="True" BorderThickness="3" Closed="Window_Closed">
 
-    <Grid Background="White" MouseDown="Grid_MouseDown" Margin="0,0,-6,4">
+    <Grid Background="White" MouseDown="Grid_MouseDown" Margin="0,0,-6,-6">
         <StackPanel VerticalAlignment="Top">
             <Grid Background="Crimson" Height="40">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="10 0">
@@ -18,12 +18,20 @@
                 </StackPanel>
             </Grid>
         </StackPanel>
-        <Grid HorizontalAlignment="Left" Height="229" Margin="82,59,0,0" VerticalAlignment="Top" Width="504">
-            <TextBox x:Name="txtRut" HorizontalAlignment="Left" Height="23" Margin="29,62,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-            <Label x:Name="label" Content="Rut Colaborador" HorizontalAlignment="Left" Margin="29,33,0,0" VerticalAlignment="Top" Width="108"/>
+        <Grid HorizontalAlignment="Left" Height="383" Margin="10,59,0,0" VerticalAlignment="Top" Width="718">
+            <TextBox x:Name="txtRut" HorizontalAlignment="Left" Height="23" Margin="29,33,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="108"/>
+            <Label x:Name="label" Content="Rut Colaborador" HorizontalAlignment="Left" Margin="29,16,0,0" VerticalAlignment="Top" Width="108"/>
+            <Label x:Name="label_Copy" Content="Cargo" HorizontalAlignment="Left" Margin="29,158,0,0" VerticalAlignment="Top" Width="108"/>
+            <Label x:Name="label_Copy1" Content="Nombre" HorizontalAlignment="Left" Margin="29,83,0,0" VerticalAlignment="Top" Width="108"/>
+            <Label x:Name="label_Copy2" Content="Nombre Usuario" HorizontalAlignment="Left" Margin="29,229,0,0" VerticalAlignment="Top" Width="108"/>
+            <DataGrid x:Name="dtg_Colaboradores" HorizontalAlignment="Left" Height="333" Margin="182,16,0,0" VerticalAlignment="Top" Width="526" Loaded="dtg_Colaboradores_Loaded" SelectionChanged="dtg_Colaboradores_SelectionChanged"/>
+            <TextBox x:Name="txtNombre" HorizontalAlignment="Left" Height="23" Margin="29,107,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="136"/>
+            <TextBox x:Name="txtCargo" HorizontalAlignment="Left" Height="23" Margin="29,187,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="txtUsuario" HorizontalAlignment="Left" Height="23" Margin="29,258,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+            <Label x:Name="label_Copy3" Content="Contraseña" HorizontalAlignment="Left" Margin="29,297,0,0" VerticalAlignment="Top" Width="108"/>
+            <TextBox x:Name="txtContra" HorizontalAlignment="Left" Height="23" Margin="29,326,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         </Grid>
-        <Button x:Name="btnAgregarUsu" Content="Agregar" HorizontalAlignment="Left" Margin="596,59,0,0" VerticalAlignment="Top" Width="90" Background="#FF0055AA" BorderBrush="{x:Null}" Click="btnAgregarUsu_Click"/>
-        <Button x:Name="button_Copy" Content="Cancelar" HorizontalAlignment="Left" Margin="596,170,0,0" VerticalAlignment="Top" Width="93" Background="#FFB61C1C" BorderBrush="{x:Null}" Click="button_Copy_Click"/>
-        <Button x:Name="btnModificar" Content="Modificar" HorizontalAlignment="Left" Margin="596,114,0,0" VerticalAlignment="Top" Width="101" Background="#FF4B4BFF" BorderBrush="{x:Null}" Click="btnModificar_Click"/>
+        <Button x:Name="btnAgregarUsu" Content="Agregar" HorizontalAlignment="Left" Margin="733,84,0,0" VerticalAlignment="Top" Width="90" Background="#FF0055AA" BorderBrush="{x:Null}" Click="btnAgregarUsu_Click"/>
+        <Button x:Name="button_Copy" Content="Cancelar" HorizontalAlignment="Left" Margin="733,137,0,0" VerticalAlignment="Top" Width="93" Background="#FFB61C1C" BorderBrush="{x:Null}" Click="button_Copy_Click"/>
     </Grid>
 </Window>

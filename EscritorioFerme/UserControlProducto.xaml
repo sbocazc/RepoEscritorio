@@ -8,25 +8,37 @@
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="900">
     <Grid>
-        <materialDesign:TransitioningContent x:Name="TransitionSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.1}">
-            <StackPanel>
-                <TextBlock Text="Productos" FontSize="40" VerticalAlignment="Center" Margin="30,10,560,10" Height="61"/>
-                <Button x:Name="button" Content="Agregar Producto" Height="48" Margin="619,0,59,0" RenderTransformOrigin="0.5,0.5" Background="#FF0055AA" BorderBrush="#FF0055AA" Click="button_Click">
-                    <Button.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform/>
-                            <SkewTransform/>
-                            <RotateTransform/>
-                            <TranslateTransform X="30" Y="-50"/>
-                        </TransformGroup>
-                    </Button.RenderTransform>
-                </Button>
-            </StackPanel>
-
+        <Label x:Name="lbl_buscarnomb_producto" Content="Buscar Por nombre de producto" Margin="241,25,474,545" RenderTransformOrigin="0.5,0.5">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.358"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <TextBox x:Name="Txt_Buscar_Producto" HorizontalAlignment="Left" Height="30" Margin="442,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164" Background="#FF6A6A6A" TextChanged="Txt_Buscar_Producto_TextChanged" KeyUp="Buscar_id_producto"/>
+        <Button x:Name="Agregar_Producto" Height="Auto" Margin="790,55,59,509" RenderTransformOrigin="0.5,0.5" Background="#FF0055AA" BorderBrush="#FF0055AA" Click="Click_Agregar_Producto">
+            <materialDesign:PackIcon Kind="CartAdd"/>
+        </Button>
+        <materialDesign:TransitioningContent x:Name="TransitionSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.1}" Margin="0,-10,0,10">
+            <TextBox x:Name="txt_buscarnomb_producto" HorizontalAlignment="Left" Height="26" Margin="296,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="#FF6A6A6A" KeyUp="txt_buscarnomb_producto_keyup"/>
         </materialDesign:TransitioningContent>
+        <TextBlock FontSize="40" VerticalAlignment="Center" Margin="34,31,674,508" Height="61"><Run Text="Productos"/></TextBlock>
         <StackPanel HorizontalAlignment="Left" Height="447" Margin="34,120,0,0" VerticalAlignment="Top" Width="807">
-            <DataGrid x:Name="dataGrid1" Height="446"/>
+            <DataGrid x:Name="dataGrid_Productos" Height="446" Loaded="dataGrid_Productos_loaded" SelectionChanged="dataGrid_Productos_SelectionChanged"/>
 
         </StackPanel>
+
+        <Button x:Name="Modificar_Producto"  Margin="718,55,128,509" Height="Auto"  Background="#FF4B4BFF" BorderBrush="{x:Null}" Click="Modificar_Producto_Click">
+            <materialDesign:PackIcon Kind="Edit"/>
+        </Button>
+
+        <Button x:Name="Btn_Buscar_Producto"  Margin="611,56,235,508" Height="Auto"  Background="#FF5F5F70" BorderBrush="{x:Null}" IsEnabled="False">
+            <materialDesign:PackIcon Kind="Search"/>
+        </Button>
+        <Label x:Name="lbl_buscarid_producto" Content="Buscar Por Id de producto" HorizontalAlignment="Left" Margin="444,31,0,0" VerticalAlignment="Top" Width="153"/>
+
     </Grid>
 </UserControl>

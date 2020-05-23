@@ -8,43 +8,36 @@
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="900">
     <Grid>
-        <materialDesign:TransitioningContent x:Name="TransitionSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.1}">
+        <Button x:Name="btn_Modificar_Proveedor"  Margin="716,39,115,507" Height="Auto"  Background="#FF4B4BFF" BorderBrush="{x:Null}" Click="Modificar_Proveedor_Click" RenderTransformOrigin="0.5,0.5">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+            <materialDesign:PackIcon Kind="Edit"/>
+        </Button>
+        <TextBox x:Name="txt_buscarrubro_proveedor" TextWrapping="Wrap" Margin="456,54,278,511" Background="#FF6A6A6A" KeyUp="txt_buscarrubro_proveedor_keyup"/>
+        <materialDesign:TransitioningContent x:Name="TransitionSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.1}" Margin="10,0,-10,0">
             <StackPanel>
-                <TextBlock Text="Proveedores" FontSize="40" VerticalAlignment="Center" Margin="30,10,560,10" Height="61"/>
-                <Button x:Name="button" Content="Agregar Proveedor" Height="48" Margin="619,0,59,0" RenderTransformOrigin="0.5,0.5" Background="#FF0055AA" BorderBrush="#FF0055AA" Click="button_Click">
-                    <Button.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform/>
-                            <SkewTransform/>
-                            <RotateTransform/>
-                            <TranslateTransform X="30" Y="-50"/>
-                        </TransformGroup>
-                    </Button.RenderTransform>
-                </Button>
+                <TextBlock Text="Proveedor" FontSize="40" VerticalAlignment="Center" Margin="30,10,680,10" Height="61"/>
             </StackPanel>
+
 
         </materialDesign:TransitioningContent>
         <StackPanel HorizontalAlignment="Left" Height="447" Margin="34,120,0,0" VerticalAlignment="Top" Width="807">
-            <DataGrid x:Name="dataGrid" Height="446" ColumnWidth="*">
-                <DataGrid.ColumnHeaderStyle>
-                    <Style TargetType="{x:Type DataGridColumnHeader}">
-                        <Setter Property="Padding" Value="0 7"/>
-                        <Setter Property="FontWeight" Value="Bold"/>
-                        <Setter Property="FontSize" Value="14"></Setter>
-                        <Setter Property="TextElement.Foreground" Value="Black" />
-                        <Setter Property="Background" Value="Crimson"></Setter>
-                        <Setter Property="Foreground" Value="White"></Setter>
-                    </Style>
-                </DataGrid.ColumnHeaderStyle>
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="Rut"/>
-                    <DataGridTextColumn Header="Nombre"/>
-                    <DataGridTextColumn Header="Celular"/>
-                    <DataGridTextColumn Header="Rubro"/>
-                    <DataGridTextColumn Header="Opciones"/>
-                </DataGrid.Columns>
-            </DataGrid>
-
+            <DataGrid x:Name="dataGrid_Proveedor" Height="449" Loaded="dataGrid_Proveedor_loaded" SelectionChanged="dataGrid_Proveedor_SelectionChanged"/>
         </StackPanel>
+        <Button x:Name="Btn_Buscar_Proveedor"  Margin="644,36,202,502" Height="Auto"  Background="#FF5F5F70" BorderBrush="{x:Null}" IsEnabled="False">
+            <materialDesign:PackIcon Kind="Search"/>
+        </Button>
+        <Button x:Name="Btn_Agregar_Proveedor"  Margin="794,35,31,502" Height="Auto"  Background="#FF0055AA" BorderBrush="{x:Null}" Click="Btn_agregar_proveedor_Click">
+            <materialDesign:PackIcon Kind="GroupAdd" Height="43" Width="26"/>
+        </Button>
+        <TextBox x:Name="txt_buscarnom_proveedor" HorizontalAlignment="Left" Height="35" Margin="254,54,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="162" Background="#FF6A6A6A" KeyUp="txt_buscarnom_proveedor_keyup"/>
+        <Label x:Name="lbl_buscarnomb_prove" Content="Buscar Nombre" HorizontalAlignment="Left" Margin="254,18,0,0" VerticalAlignment="Top" Width="109"/>
+        <Label x:Name="lbl_bucarrub_prove" Content="Buscar Rubro" HorizontalAlignment="Left" Margin="485,10,0,0" VerticalAlignment="Top" Width="137"/>
     </Grid>
 </UserControl>

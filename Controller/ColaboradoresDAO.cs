@@ -11,10 +11,10 @@ using CapaDatosAccess;
 
 namespace Controller
 {
-   
+
     public class ColaboradoresDAO
     {
-        
+
         public List<Colaborador> listarUsuarios()
         {
             try
@@ -51,12 +51,13 @@ namespace Controller
                 else
                 {
                     Colaborador cola = new Colaborador();
-                    cola.Rut_cola = null;
-                    cola.Nombre = null;
-                    cola.Apellido = null;
-                    cola.TipoUsu = null;
-                    cola.Nomusuario = null;
-                    cola.Password = null;
+                    cola.Rut_cola = "";
+                    cola.Nombre = "";
+                    cola.Apellido = "";
+                    cola.TipoUsu = "";
+                    cola.Nomusuario = "";
+                    cola.Password = "";
+                    cola.Activo = 0;
                     lista.Add(cola);
                 }
                 cn.Close();
@@ -72,9 +73,55 @@ namespace Controller
 
                 throw;
             }
-           
+
 
         }
+
+        public bool ExisteCola(string rut)
+        {
+            try
+            {
+                Conexion objCone = new Conexion();
+                OracleConnection cn = objCone.getConexion();
+                cn.Open();
+                OracleCommand cmd = new OracleCommand("FN_EXISTE_COLABORA", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                OracleParameter falso = cmd.Parameters.Add("EXISTE", OracleDbType.Int32);
+                falso.Direction = ParameterDirection.ReturnValue;
+                OracleParameter rutemp = new OracleParameter("RUT", OracleDbType.Varchar2);
+                rutemp.Direction = ParameterDirection.Input;
+                rutemp.Value = rut;
+                cmd.Parameters.Add(rutemp);
+
+                cmd.ExecuteNonQuery();
+
+                var existe = cmd.Parameters["EXISTE"].Value.ToString();
+                if (existe == "1")
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        //public List<Colaborador> Lista()
+        //{
+
+        //}
+
+        //public List<Colaborador> ListaInactivos()
+        //{
+
+        //}
+
 
         public void insertar(Colaborador cola)
         {
@@ -98,10 +145,10 @@ namespace Controller
 
                 throw;
             }
-            
+
         }
 
-        public void eliminar(Colaborador cola)
+        public bool eliminar(Colaborador cola)
         {
             try
             {
@@ -111,11 +158,26 @@ namespace Controller
                 OracleCommand cmd = new OracleCommand("SP_ELIMINAR_COLA", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add("RUT", OracleDbType.Varchar2).Value = cola.Rut_cola;
-                cmd.ExecuteNonQuery();
-                cn.Close();
-                cmd.Dispose();
-                cn.Dispose();
-                objCone = null;
+                int x = cmd.ExecuteNonQuery();
+                if (x == 0)
+                {
+                    cn.Close();
+                    cmd.Dispose();
+                    cn.Dispose();
+                    objCone = null;
+                    return false;
+
+                }
+                else
+                {
+                    cn.Close();
+                    cmd.Dispose();
+                    cn.Dispose();
+                    objCone = null;
+                    return true;
+
+                }
+
             }
             catch (Exception)
             {
@@ -125,5 +187,47 @@ namespace Controller
 
         }
 
+        public List<llenarCombo> llenar()
+        {
+            Conexion objCone = new Conexion();
+            OracleConnection cn = objCone.getConexion();
+            cn.Open();
+            OracleCommand cmd = new OracleCommand("FN_COLABORADOR", cn);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            List<llenarCombo> lista = new List<llenarCombo>();
+            OracleParameter output = cmd.Parameters.Add("C_COLABORA", OracleDbType.RefCursor);
+            output.Direction = ParameterDirection.ReturnValue;
+
+            cmd.ExecuteNonQuery();
+
+            OracleDataReader reader = ((OracleRefCursor)output.Value).GetDataReader();
+
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    llenarCombo llena = new llenarCombo();
+                    llena.rut = reader.GetString(0);
+                    llena.nombre = reader.GetString(1);
+
+                    lista.Add(llena);
+                }
+            }
+            else
+            {
+                llenarCombo llena = new llenarCombo();
+                llena.rut = "";
+                llena.nombre = "";
+
+                lista.Add(llena);
+            }
+            return lista;
+        }
+    }
+    public class llenarCombo
+    {
+        public string rut;
+        public string nombre;
     }
 }

@@ -63,7 +63,7 @@
                         <TextBlock Text="Orden de Compra" FontSize="18" VerticalAlignment="Center" Margin="20 0"></TextBlock>
                     </StackPanel>
                 </ListViewItem>
-                <ListViewItem Height="60">
+                <ListViewItem Height="60" Selected="ListViewItem_Selected">
                     <StackPanel Orientation="Horizontal">
                         <materialDesign:PackIcon Kind="Toolbox" Width="30" Height="30" VerticalAlignment="Center" Margin="5"></materialDesign:PackIcon>
                         <TextBlock Text="Productos" FontSize="18" VerticalAlignment="Center" Margin="20 0"></TextBlock>
